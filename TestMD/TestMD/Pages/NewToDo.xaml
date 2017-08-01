@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMD.Pages.NewToDo"  
+             Title="New To Do Task">
+
+
+  <ContentPage.Content>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="0,20,0,0" HeightRequest="80">
+            <Label Margin="20,0,0,0" Text="To Do:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" WidthRequest="120"/>
+            <Entry Placeholder="e.g. Walk the dog" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HeightRequest="80">
+            <Label Margin="20,0,0,0" Text="Category:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="120" TextColor="Black"/>
+            <Picker Title="Choose" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Picker.Items>
+                   <x:String>Financial</x:String>
+                   <x:String>Social</x:String>
+                   <x:String>Random</x:String>
+                </Picker.Items>
+            </Picker>
+       </StackLayout>
+
+       <StackLayout Orientation="Horizontal" HeightRequest="80">
+           
+           <Label Margin="20,0,0,0" Text="Importance:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" WidthRequest="120"/>
+           <Slider x:Name="ImportanceSlider1" Minimum="0" Maximum="100" Value="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Label FontSize="Medium" BindingContext="{x:Reference ImportanceSlider1}" Text="{Binding Value, StringFormat='{0:F0}'}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="50"/>
+       </StackLayout>
+
+       <StackLayout Orientation="Horizontal" HeightRequest="120">
+         <Label Margin="20,0,0,0" Text="Complete by:" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="120" TextColor="Black"/>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <TimePicker/>
+                    <DatePicker Margin="0,20,0,0"/>
+                </StackLayout>
+       </StackLayout>
+       <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+                <Button Margin="20,0,20,20" HorizontalOptions="FillAndExpand" HeightRequest="50" VerticalOptions="End" BackgroundColor="#00b8ff" BorderWidth="3" BorderColor="White" 
+                    Text="SAVE" FontAttributes="Bold" TextColor="White" FontSize="Large"/>
+       </StackLayout>
+
+    </StackLayout>
+
+        
+  </ContentPage.Content>
+</ContentPage>

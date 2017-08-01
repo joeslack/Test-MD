@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Padding="0,30,0,0"
+             Title="Menu"
+             x:Class="TestMD.Pages.MasterPage">
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="Start">
+           
+            <Label Text="MENU" FontAttributes="Bold" FontSize="Large" Margin="20,0,0,0" />
+           
+            <ListView x:Name="addnewlistView" VerticalOptions="Start" SeparatorVisibility="None" HeightRequest ="55">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <TextCell IsEnabled="{Binding IsVisible}" Text="{Binding Title}" TextColor="Black" Height="30"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Label Text="Current Tasks" FontAttributes="Bold" FontSize="Medium" Margin="20,0,0,0" VerticalOptions="Start"/>
+
+            <ListView x:Name="currenttaskslistView" VerticalOptions="StartAndExpand" SeparatorVisibility="None" HeightRequest ="150">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <TextCell IsEnabled="{Binding IsVisible}" Text="{Binding Title}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Historic Tasks" FontAttributes="Bold" FontSize="Medium" Margin="20,0,0,0" VerticalOptions="Start"/>
+
+            <ListView x:Name="historictaskslistView" VerticalOptions="StartAndExpand" SeparatorVisibility="None" HeightRequest ="55">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <TextCell IsEnabled="{Binding IsVisible}" Text="{Binding Title}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>
